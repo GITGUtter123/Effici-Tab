@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "EfficiTab",
+  "version": "1.0",
+  "description": "A customizable, AI-powered new tab page for productivity.",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": ["storage", "scripting"],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
