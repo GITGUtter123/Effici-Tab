@@ -1,0 +1,411 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #6200ee;
+  --primary-hover: #3700b3;
+  --card-background: #ffffff;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --card-background: #1e1e1e;
+  --card-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+
+/* Blue Theme */
+body.blue {
+  --background-color: #001f3f;
+  --text-color: #ffffff;
+  --card-background: #003366;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Red Theme */
+body.red {
+  --background-color: #330000;
+  --text-color: #ffffff;
+  --card-background: #660000;
+  --card-shadow: 0 4px 8px rgba(102, 0, 0, 0.3);
+}
+
+/* Green Theme */
+body.green {
+  --background-color: #002200;
+  --text-color: #ffffff;
+  --card-background: #004400;
+  --card-shadow: 0 4px 8px rgba(0, 68, 0, 0.3);
+}
+
+/* Purple Theme */
+body.purple {
+  --background-color: #1e0a3c;
+  --text-color: #ffffff;
+  --card-background: #3a1c6b;
+  --card-shadow: 0 4px 8px rgba(58, 28, 107, 0.3);
+}
+
+/* Orange Theme */
+body.orange {
+  --background-color: #331a00;
+  --text-color: #ffffff;
+  --card-background: #663300;
+  --card-shadow: 0 4px 8px rgba(102, 51, 0, 0.3);
+}
+
+/* Pink Theme */
+body.pink {
+  --background-color: #33001a;
+  --text-color: #ffffff;
+  --card-background: #660033;
+  --card-shadow: 0 4px 8px rgba(102, 0, 51, 0.3);
+}
+
+/* Teal Theme */
+body.teal {
+  --background-color: #003333;
+  --text-color: #ffffff;
+  --card-background: #006666;
+  --card-shadow: 0 4px 8px rgba(0, 102, 102, 0.3);
+}
+
+body.custom-bg {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+/* Gold Theme */
+body.gold {
+  --background-color: #332600;
+  --text-color: #ffffff;
+  --card-background: #664d00;
+  --card-shadow: 0 4px 8px rgba(102, 77, 0, 0.3);
+}
+
+/* Dark Theme */
+body.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --card-background: #1e1e1e;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Light Theme */
+body.light {
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --card-background: #ffffff;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+#container {
+  text-align: center;
+  position: relative;
+}
+
+/* Clock */
+#clock {
+  font-size: 64px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* Date */
+#date {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* Search Bar */
+#search-bar {
+  margin-bottom: 40px;
+}
+
+#search-input {
+  width: 500px;
+  padding: 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  background-color: var(--card-background);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Efficitech Button */
+#efficitech-button {
+  margin-bottom: 20px;
+}
+
+/* AI Tools Button and Dropdown */
+#ai-tools {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+#ai-tools-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 24px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#ai-tools-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  display: none;
+  z-index: 10;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 12px 24px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Show dropdown when active */
+#ai-tools.active .dropdown {
+  display: block;
+}
+
+/* Side Menu */
+#side-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: var(--card-background);
+  box-shadow: var(--card-shadow);
+  transition: right 0.3s;
+  z-index: 100;
+}
+
+#side-menu.active {
+  right: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menu-content {
+  padding: 16px;
+}
+
+.theme-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.theme-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Menu Button */
+#menu-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#menu-button:hover {
+  background-color: var(--primary-hover);
+}
+
+#google-apps {
+  position: fixed;
+  top: 20px;
+  right: 60px;
+}
+
+#google-apps-button {
+  padding: 12px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#google-apps-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 12px;
+  width: 200px;
+}
+
+#google-apps.active #google-apps-dropdown {
+  display: block;
+}
+
+/* Modern To-Do List Styling */
+#todo-container {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  width: 300px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+}
+
+/* Title */
+#todo-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* Input & Add Button */
+#todo-input-container {
+  display: flex;
+  gap: 10px;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: var(--card-background);
+  color: var(--text-color);
+}
+
+#add-task {
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#add-task:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Task List */
+#todo-list {
+  margin-top: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-background);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: 0.3s ease;
+}
+
+.todo-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Delete Button */
+.delete-task {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.delete-task:hover {
+  color: darkred;
+}
+
+/* Checkbox Styling */
+.todo-item input {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
